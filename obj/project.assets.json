@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\sharps.csproj",
-      "projectName": "sharps",
-      "projectPath": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\sharps.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\MultiplicationTable.csproj",
+      "projectName": "MultiplicationTable",
+      "projectPath": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\MultiplicationTable.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\obj\\",
       "projectStyle": "PackageReference",
