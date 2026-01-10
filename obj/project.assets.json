@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\School.csproj",
-      "projectName": "School",
-      "projectPath": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\School.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\Inventory.csproj",
+      "projectName": "Inventory",
+      "projectPath": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\Inventory.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Desktop\\Projects\\games\\sharps\\obj\\",
       "projectStyle": "PackageReference",
