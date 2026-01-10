@@ -6,15 +6,13 @@ namespace Inventory
 {
     class Stocky
     {
-
-
         private static readonly List<Store> stores = [];
         static async Task Main(string[] args)
         {
             Console.Clear();
             Console.WriteLine("Hey Welcome to Stocky, you new Smart Inventory System");
             Console.WriteLine("_____________________________________________________");
-            Console.WriteLine("What would like to do today? enter 'add' , 'products' ,'del', 'price', 'stores' to use the Inventory system ");
+            Console.WriteLine("What would like to do today?\nEnter 'add','products','del','price','stores','report' to use the Inventory system ");
             await HandleCLIPrompt();
         }
 
@@ -28,7 +26,6 @@ namespace Inventory
                 if (input.Equals("exit", StringComparison.CurrentCultureIgnoreCase)) break;
                 switch (input)
                 {
-
                     case "add":
                         await ProductAdder();
                         break;
@@ -45,7 +42,9 @@ namespace Inventory
                     case "stores":
                         GetStores();
                         break;
-
+                    case "report":
+                        LogStoreProducteSales();
+                        break;
                     default:
                         Console.WriteLine("You do not specify any correct \nN.B Ensure you do not add why space to your command");
                         break;
@@ -72,7 +71,7 @@ namespace Inventory
             double price = Convert.ToDouble(Console.ReadLine());
             Console.Write("Specify the product quantity > ");
             int _quantity = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Is " + product_name + " available at the moment ? yes/no >");
+            Console.Write("Is " + product_name + " available at the moment ? yes/no > ");
             string response = Console.ReadLine();
             bool availabilityStatus = response.Equals("yes", StringComparison.CurrentCultureIgnoreCase);
             // add new product into the store products list
@@ -87,6 +86,7 @@ namespace Inventory
                 Console.WriteLine(store_name + " Updated with new product");
                 Console.WriteLine("_____________________________________________________");
                 Console.WriteLine("_____________________________________________________");
+
             }
             else
             {
@@ -118,7 +118,7 @@ namespace Inventory
                         for (int i = 0; i <= store.product_list.Count; i++)
                         {
                             int rank = i + 1;
-                            Console.WriteLine(rank + " " + store.product_list[i].Name + " price " + store.product_list[i].Price + " naira");
+                            Console.WriteLine(rank + ". " + store.product_list[i].Name + " price " + store.product_list[i].Price + " naira" + " Available quantity is " + store.product_list[i].Quantity);
                         }
                         Console.WriteLine(200 + " OK ✅");
                         Console.WriteLine("_____________________________________________________");
@@ -222,6 +222,41 @@ namespace Inventory
             else
             {
                 Console.WriteLine("No stores yet");
+                Console.WriteLine("_____________________________________________________");
+                Console.WriteLine("_____________________________________________________");
+            }
+        }
+
+
+        public static void LogStoreProducteSales()
+        {
+            Console.WriteLine("Specify the store you want want to log sales report for: ");
+            string store_name = Console.ReadLine();
+            Store store = stores.Find(s => s.Name == store_name);
+            if (store != null)
+            {
+                Console.WriteLine("Enter the product name >");
+                string product_name = Console.ReadLine();
+                Product product = store.product_list.Find(p => p.Name == product_name);
+                if (product != null)
+                {
+                    Console.WriteLine("What's the quantity of " + product.Name + " sold >");
+                    int quatity_sold = Convert.ToInt32(Console.ReadLine());
+                    store.LogSales(product, quatity_sold);
+                    Console.WriteLine("_____________________________________________________");
+                    Console.WriteLine("_____________________________________________________");
+                }
+                else
+                {
+                    Console.WriteLine("product not found");
+                    Console.WriteLine("_____________________________________________________");
+                    Console.WriteLine("_____________________________________________________");
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Store not found");
                 Console.WriteLine("_____________________________________________________");
                 Console.WriteLine("_____________________________________________________");
             }
