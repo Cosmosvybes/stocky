@@ -66,13 +66,13 @@ namespace Inventory
 
 
             // prompt user for  all the product information
-            Console.WriteLine("What product would you like to add to the store ?");
+            Console.WriteLine("What product would you like to add to the store >");
             string product_name = Console.ReadLine();
-            Console.Write("Specify the product price: ");
+            Console.Write("Specify the product price > ");
             double price = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Specify the product quantity: ");
+            Console.Write("Specify the product quantity > ");
             int _quantity = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Is " + product_name + " available at the moment ? yes/ no");
+            Console.Write("Is " + product_name + " available at the moment ? yes/no >");
             string response = Console.ReadLine();
             bool availabilityStatus = response.Equals("yes", StringComparison.CurrentCultureIgnoreCase);
             // add new product into the store products list
@@ -118,7 +118,7 @@ namespace Inventory
                         for (int i = 0; i <= store.product_list.Count; i++)
                         {
                             int rank = i + 1;
-                            Console.WriteLine(rank + " " + store.product_list[i].Name + " " + store.product_list[i].Price);
+                            Console.WriteLine(rank + " " + store.product_list[i].Name + " price " + store.product_list[i].Price + " naira");
                         }
                         Console.WriteLine(200 + " OK ✅");
                         Console.WriteLine("_____________________________________________________");
@@ -146,12 +146,12 @@ namespace Inventory
         }
         public static async Task RemoveProduct()
         {
-            Console.WriteLine("Specify the store you want to remove Product from: ");
+            Console.WriteLine("Specify the store you want to remove Product from >");
             string store_name = Console.ReadLine();
             Store store = stores.Find(s => s.Name == store_name);
             if (store != null)
             {
-                Console.WriteLine("Store found, now specify the product name to be removed");
+                Console.WriteLine("Store found, now specify the product name to be removed >");
                 string product_name = Console.ReadLine();
                 Product product = store.product_list.Find(p => p.Name == product_name);
                 if (product != null)
