@@ -118,7 +118,7 @@ namespace Inventory
                         for (int i = 0; i <= store.product_list.Count; i++)
                         {
                             int rank = i + 1;
-                            Console.WriteLine(rank + ' ' + store.product_list[i].Name + " - " + "₦ " + store.product_list[i].Price);
+                            Console.WriteLine(rank + " " + store.product_list[i].Name + " " + store.product_list[i].Price);
                         }
                         Console.WriteLine(200 + " OK ✅");
                         Console.WriteLine("_____________________________________________________");
