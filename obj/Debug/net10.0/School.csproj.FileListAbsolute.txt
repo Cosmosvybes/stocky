@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.AssemblyInfo.cs
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.sourcelink.json
+C:\Users\User\Desktop\Projects\games\sharps\bin\Debug\net10.0\School.exe
+C:\Users\User\Desktop\Projects\games\sharps\bin\Debug\net10.0\School.deps.json
+C:\Users\User\Desktop\Projects\games\sharps\bin\Debug\net10.0\School.runtimeconfig.json
+C:\Users\User\Desktop\Projects\games\sharps\bin\Debug\net10.0\School.dll
+C:\Users\User\Desktop\Projects\games\sharps\bin\Debug\net10.0\School.pdb
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.dll
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\refint\School.dll
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.pdb
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\School.genruntimeconfig.cache
+C:\Users\User\Desktop\Projects\games\sharps\obj\Debug\net10.0\ref\School.dll
