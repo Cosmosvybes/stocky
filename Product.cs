@@ -3,10 +3,10 @@ namespace Inventory
 {
     class Product
     {
-        public string Name;
-        public double Price;
-        public int Quantity;
-        public bool IsAvailable;
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+        public bool IsAvailable { get; set; }
 
     }
 }

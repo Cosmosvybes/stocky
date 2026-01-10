@@ -57,25 +57,25 @@ namespace Inventory
         public static async Task ProductAdder()
         {
             Console.WriteLine("Which store would you like this product to be stored ?");
-            string store_name = Console.ReadLine();
+            string StoreName = Console.ReadLine();
             //check if store already exist 
-            Store existing_store = stores.Find(s => s.Name == store_name);
+            Store existing_store = stores.Find(s => s.Name == StoreName);
             // create new store 
-            Store store = new() { Name = store_name };
+            Store store = new() { Name = StoreName };
 
 
             // prompt user for  all the product information
             Console.WriteLine("What product would you like to add to the store >");
-            string product_name = Console.ReadLine();
+            string ProductName = Console.ReadLine();
             Console.Write("Specify the product price > ");
             double price = Convert.ToDouble(Console.ReadLine());
             Console.Write("Specify the product quantity > ");
             int _quantity = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Is " + product_name + " available at the moment ? yes/no > ");
+            Console.Write("Is " + ProductName + " available at the moment ? yes/no > ");
             string response = Console.ReadLine();
             bool availabilityStatus = response.Equals("yes", StringComparison.CurrentCultureIgnoreCase);
             // add new product into the store products list
-            Product product = new() { Name = product_name, IsAvailable = availabilityStatus, Price = price, Quantity = _quantity };
+            Product product = new() { Name = ProductName, IsAvailable = availabilityStatus, Price = price, Quantity = _quantity };
             Console.WriteLine("please wait...");
             Console.WriteLine("_____________________________________________________");
             await Task.Delay(2000);
@@ -83,7 +83,7 @@ namespace Inventory
             {
 
                 await existing_store.AddSingleProduct(product);
-                Console.WriteLine(store_name + " Updated with new product");
+                Console.WriteLine(StoreName + " Updated with new product");
                 Console.WriteLine("_____________________________________________________");
                 Console.WriteLine("_____________________________________________________");
 
@@ -103,8 +103,8 @@ namespace Inventory
         public static async Task GetProducts()
         {
             Console.WriteLine("Which store do you want to read ?");
-            string store_name = Console.ReadLine();
-            Store store = stores.Find(s => s.Name == store_name);
+            string StoreName = Console.ReadLine();
+            Store store = stores.Find(s => s.Name == StoreName);
 
             if (store != null)
             {
@@ -113,12 +113,12 @@ namespace Inventory
                 bool yes = response.Equals("yes", StringComparison.CurrentCultureIgnoreCase);
                 if (yes)
                 {
-                    if (store.product_list.Count > 0)
+                    if (store.ProductList.Count > 0)
                     {
-                        for (int i = 0; i <= store.product_list.Count; i++)
+                        for (int i = 0; i < store.ProductList.Count; i++)
                         {
                             int rank = i + 1;
-                            Console.WriteLine(rank + ". " + store.product_list[i].Name + " price " + store.product_list[i].Price + " naira" + " Available quantity is " + store.product_list[i].Quantity);
+                            Console.WriteLine(rank + ". " + store.ProductList[i].Name + " price " + store.ProductList[i].Price + " naira" + " Available quantity is " + store.ProductList[i].Quantity);
                         }
                         Console.WriteLine(200 + " OK ✅");
                         Console.WriteLine("_____________________________________________________");
@@ -147,13 +147,13 @@ namespace Inventory
         public static async Task RemoveProduct()
         {
             Console.WriteLine("Specify the store you want to remove Product from >");
-            string store_name = Console.ReadLine();
-            Store store = stores.Find(s => s.Name == store_name);
+            string StoreName = Console.ReadLine();
+            Store store = stores.Find(s => s.Name == StoreName);
             if (store != null)
             {
                 Console.WriteLine("Store found, now specify the product name to be removed >");
-                string product_name = Console.ReadLine();
-                Product product = store.product_list.Find(p => p.Name == product_name);
+                string ProductName = Console.ReadLine();
+                Product product = store.ProductList.Find(p => p.Name == ProductName);
                 if (product != null)
                     store.DeleteProduct(product);
                 else
@@ -177,22 +177,22 @@ namespace Inventory
 
             Console.WriteLine("Specify the store you want update its product price");
             // get the store name
-            string store_name = Console.ReadLine();
+            string StoreName = Console.ReadLine();
 
             //look for the store name 
-            Store store = stores.Find(s => s.Name == store_name);
+            Store store = stores.Find(s => s.Name == StoreName);
             if (store != null)
             {
                 // get product name
                 Console.WriteLine("Specify the the product name: ");
-                string product_name = Console.ReadLine();
-                Product product = store.product_list.Find(p => p.Name == product_name);
+                string ProductName = Console.ReadLine();
+                Product product = store.ProductList.Find(p => p.Name == ProductName);
                 if (product != null)
                 {
                     // get the product new price
                     Console.WriteLine("Specify new price for the product");
-                    double new_price = Convert.ToDouble(Console.ReadLine());
-                    await store.UpdateProductPrice(product, new_price);
+                    double NewPrice = Convert.ToDouble(Console.ReadLine());
+                    await store.UpdateProductPrice(product, NewPrice);
                 }
                 else
                 {
@@ -231,13 +231,13 @@ namespace Inventory
         public static void LogStoreProducteSales()
         {
             Console.WriteLine("Specify the store you want want to log sales report for: ");
-            string store_name = Console.ReadLine();
-            Store store = stores.Find(s => s.Name == store_name);
+            string StoreName = Console.ReadLine();
+            Store store = stores.Find(s => s.Name == StoreName);
             if (store != null)
             {
                 Console.WriteLine("Enter the product name >");
-                string product_name = Console.ReadLine();
-                Product product = store.product_list.Find(p => p.Name == product_name);
+                string ProductName = Console.ReadLine();
+                Product product = store.ProductList.Find(p => p.Name == ProductName);
                 if (product != null)
                 {
                     Console.WriteLine("What's the quantity of " + product.Name + " sold >");
