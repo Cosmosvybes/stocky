@@ -1,7 +1,7 @@
 using System;
 namespace Inventory
 {
-    class Product
+    public class Product
     {
         public string Name { get; set; }
         public double Price { get; set; }

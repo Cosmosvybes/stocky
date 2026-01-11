@@ -1,10 +1,11 @@
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Inventory.Functions;
 namespace Inventory
 
 {
-    class Store
+    public class Store
     {
         public string Name { set; get; }
         public bool IsOpen { set; get; }
@@ -33,7 +34,11 @@ namespace Inventory
         public async Task DeleteProduct(Product product)
         {
             bool deleted = ProductList.Remove(product);
-            if (deleted) Console.WriteLine(product.Name + " successfully removed from the store");
+            if (deleted)
+            {
+                Console.WriteLine(product.Name + " successfully removed from the store");
+                Brain.SaveData();
+            }
             else
             {
                 Console.WriteLine("Operation failed");
@@ -44,6 +49,7 @@ namespace Inventory
             Product product = ProductList.Find(p => p == _product);
             product.Price = value;
             Console.WriteLine("product price has been updated to new price " + product.Price);
+            Brain.SaveData();
         }
         public async Task LogSales(Product _product, int quatity_sold)
         {

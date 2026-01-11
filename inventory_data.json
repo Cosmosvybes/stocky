@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "drinks",
+    "IsOpen": false,
+    "ProductList": [
+      {
+        "Name": "coke",
+        "Price": 200,
+        "Quantity": 12,
+        "IsAvailable": true
+      },
+      {
+        "Name": "america-cola",
+        "Price": 34,
+        "Quantity": 240,
+        "IsAvailable": false
+      }
+    ]
+  }
+]
